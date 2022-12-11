@@ -3,8 +3,6 @@ import json, urllib.request
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
 
-base_url = 'http://dailyillini.com/category/'
-
 def scraper(url):
     retval = {}
     for i in range(1, 6):
@@ -35,22 +33,6 @@ def scraper(url):
             retlist.append(ret)
         retval['Page ' + str(i)] = retlist
     return retval
-
-
-# class News(Resource):
-#     def get(self, category):
-#         request_url = base_url + category + '/'
-#         return scraper(request_url)
-
-# class SubCategoryNews(Resource):
-#     def get(self, category, subcategory):
-#         request_url = base_url + category + '/' + subcategory + '/'
-#         return scraper(request_url)
-
-# class SportsNews(Resource):
-#     def get(self, category, subcategory, sportcategory):
-#         request_url = base_url + category + '/' + subcategory + '/' + sportcategory + '/'
-#         return scraper(request_url)
 
 class DailyIllini(Resource):
     def get(self):
