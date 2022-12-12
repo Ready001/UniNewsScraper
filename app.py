@@ -20,4 +20,4 @@ api.add_resource(PurdueExponent, '/PurdueExponent')
 api.add_resource(YaleDaily, '/YaleDaily')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
